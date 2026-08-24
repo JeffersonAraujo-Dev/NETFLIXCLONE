@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Netflix Clone</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <h1 class="logo">NETFLIX</h1>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Filmes</a>
+            <a href="#">Séries</a>
+            <a href="#">Minha lista</a>
+        </nav>
+
+      <div class="search-box" id="search-box">
+
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar filmes..."
+    >
+
+    <button
+        id="search-button"
+        aria-label="Abrir pesquisa"
+    ></button>
+
+</div>
+      
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="category">
+                    FILME • AÇÃO
+                </p>
+
+                <h2>Seu filme em destaque</h2>
+
+                <p class="description">
+                    Uma descrição do filme aparecerá aqui.
+                    Depois vamos buscar essas informações
+                    através da nossa API.
+                </p>
+
+                <div class="buttons">
+
+                    <button class="btn-play">
+                        ▶ Assistir
+                    </button>
+
+                    <button class="btn-info">
+                        ⓘ Mais informações
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="catalog">
+
+    <h2>Filmes populares</h2>
+
+    <div class="movie-list" id="popular-movies"></div>
+
+    <h2>Ação</h2>
+
+    <div class="movie-list" id="action-movies"></div>
+
+    <h2>Ficção científica</h2>
+
+    <div class="movie-list" id="fiction-movies"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
