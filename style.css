@@ -1,311 +1,596 @@
-/* reset global */
+/* =========================
+   RESET
+========================= */
+
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background: #141414;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background: #141414;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  padding: 0 5%;
-  gap: 40px;
-  background: #111;
+    height: 70px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+    gap: 40px;
+
+    background: #111;
+
+    position: relative;
+    z-index: 20;
 }
 
 .logo {
-  color: #e50914;
-  font-size: 28px;
+    color: #e50914;
+    font-size: 28px;
+    font-weight: 900;
 }
 
 .navbar nav {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: color 0.2s ease;
 }
 
-/* HERO */
+.navbar nav a:hover {
+    color: #aaa;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  padding: 50px 5%;
-  background: linear-gradient(
-    to right,
-    #141414 20%,
-    rgba(20, 20, 20, 0.7),
-    rgba(20, 20, 20, 0.2)
-  );
+    min-height: 540px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 5%;
+
+    background-color: #141414;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 0.5s ease;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            #141414 10%,
+            rgba(20, 20, 20, 0.85) 40%,
+            rgba(20, 20, 20, 0.35) 75%,
+            #141414 100%
+        ),
+        linear-gradient(
+            to top,
+            #141414 0%,
+            transparent 45%
+        );
 }
 
 .hero-content {
-  max-width: 500px;
+    position: relative;
+    z-index: 2;
+
+    max-width: 550px;
 }
 
 .category {
-  color: #aaa;
-  margin-bottom: 15px;
+    color: #aaa;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
 }
 
 .hero h2 {
-  font-size: 45px;
-  margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 1.1;
+
+    margin-bottom: 20px;
 }
 
 .description {
-  color: #ddd;
-  line-height: 1.6;
-  margin-bottom: 25px;
+    color: #ddd;
+
+    font-size: 17px;
+    line-height: 1.6;
+
+    margin-bottom: 25px;
 }
 
-/* BUTTONS */
+
+/* =========================
+   BUTTONS
+========================= */
+
 .buttons {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 button {
-  border: none;
-  padding: 12px 20px;
-  border-radius: 4px;
-  font-size: 15px;
-  cursor: pointer;
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 4px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.03);
 }
 
 .btn-play {
-  background: white;
-  color: black;
+    background: #fff;
+    color: #000;
 }
 
 .btn-info {
-  background: #555;
-  color: white;
+    background: rgba(90, 90, 90, 0.9);
+    color: #fff;
 }
 
-/* CATALOG */
+
+/* =========================
+   CATALOG
+========================= */
+
 .catalog {
-  padding: 30px 5%;
+    padding: 35px 5% 60px;
+}
+
+.movie-section {
+    margin-bottom: 35px;
 }
 
 .catalog h2 {
-  margin-bottom: 20px;
-  color: #fff;
+    color: #fff;
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
 }
 
-/* MOVIE LIST */
+
+/* =========================
+   MOVIE LIST
+========================= */
+
 .movie-list {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 10px 0 25px;
-  scrollbar-width: none;
-  align-items: flex-start;
+    display: flex;
+
+    gap: 15px;
+
+    overflow-x: auto;
+
+    padding: 10px 0 20px;
+
+    scrollbar-width: none;
+
+    align-items: flex-start;
+
+    scroll-behavior: smooth;
 }
 
 .movie-list::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-/* MOVIE CARD */
+
+/* =========================
+   MOVIE CARD
+========================= */
+
 .movie-card {
-  position: relative;
-  width: 160px;        /* largura fixa para consistência */
-  height: 240px;
-  flex: 0 0 160px;     /* evita que o card cresça/encolha no flex container */
-  border-radius: 6px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-  background: #222;
+    position: relative;
+
+    width: 160px;
+    height: 240px;
+
+    min-width: 160px;
+
+    flex: 0 0 160px;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #222;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .movie-card:hover {
-  transform: scale(1.05);
-  z-index: 5;
+    transform: scale(1.06);
+
+    z-index: 5;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
+
+/* IMAGEM */
+
 .movie-image {
-  width: 100%;
-  height: 100%;
-  position: relative;
+    width: 100%;
+    height: 100%;
+
+    position: relative;
 }
 
 .movie-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.3s ease;
 }
 
-/* gradiente para a leitura do título */
-.movie-image::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 45%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+.movie-card:hover img {
+    transform: scale(1.03);
 }
+
+
+/* GRADIENTE */
+
+.movie-image::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 55%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.95)
+        );
+}
+
+
+/* TÍTULO */
 
 .movie-title {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  z-index: 2;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    z-index: 2;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
 
-/* SEARCH BOX (desktop default: collapsed) */
+
+/* =========================
+   SEARCH
+========================= */
+
 .search-box {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-left: auto;
-  width: 45px;
-  height: 42px;
-  transition: width 0.35s ease;
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    margin-left: auto;
+
+    width: 45px;
+    height: 42px;
+
+    transition: width 0.35s ease;
 }
 
 .search-box input {
-  width: 0;
-  height: 42px;
-  opacity: 0;
-  border: none;
-  outline: none;
-  background: #333;
-  color: white;
-  padding: 0;
-  border-radius: 5px;
-  transition: width 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+    width: 0;
+    height: 42px;
+
+    opacity: 0;
+
+    border: none;
+    outline: none;
+
+    background: #333;
+
+    color: white;
+
+    padding: 0;
+
+    border-radius: 5px;
+
+    transition:
+        width 0.35s ease,
+        opacity 0.25s ease,
+        padding 0.35s ease;
 }
 
 .search-box input::placeholder {
-  color: #aaa;
+    color: #aaa;
 }
 
-/* search button (magnifier) */
+
+/* BOTÃO DA LUPA */
+
 #search-button {
-  position: absolute;
-  right: 0;
-  width: 45px;
-  height: 42px;
-  padding: 0;
-  border: none;
-  border-radius: 5px;
-  background: #e50914;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+    position: absolute;
+
+    right: 0;
+
+    width: 45px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #e50914;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
 }
 
-/* circle of magnifier */
+
+/* LUPA */
+
 #search-button::before {
-  content: "";
-  width: 13px;
-  height: 13px;
-  border: 2px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: 11px;
-  left: 13px;
+    content: "";
+
+    width: 13px;
+    height: 13px;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 11px;
+    left: 13px;
 }
 
-/* handle of magnifier */
 #search-button::after {
-  content: "";
-  width: 8px;
-  height: 2px;
-  background: white;
-  position: absolute;
-  top: 26px;
-  left: 26px;
-  border-radius: 2px;
-  transform: rotate(45deg);
+    content: "";
+
+    width: 8px;
+    height: 2px;
+
+    background: white;
+
+    position: absolute;
+
+    top: 26px;
+    left: 26px;
+
+    border-radius: 2px;
+
+    transform: rotate(45deg);
 }
 
-/* when active: open the search */
+
+/* SEARCH ABERTA */
+
 .search-box.active {
-  width: 230px;
+    width: 230px;
 }
 
 .search-box.active input {
-  width: 100%;
-  opacity: 1;
-  padding: 0 50px 0 15px;
+    width: 100%;
+
+    opacity: 1;
+
+    padding: 0 50px 0 15px;
 }
 
 .search-box.active #search-button {
-  background: transparent;
+    background: transparent;
 }
 
-/* touch feedback */
-#search-button:active {
-  transform: scale(0.92);
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.search-results-section {
+    margin-bottom: 35px;
 }
 
-/* RESPONSIVE */
+.search-results-section[hidden] {
+    display: none;
+}
+
+.no-results {
+    color: #aaa;
+
+    padding: 20px 0;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
 @media (max-width: 700px) {
-  .navbar {
-    height: auto;
-    min-height: 70px;
-    flex-wrap: wrap;
-    padding: 15px 5%;
-    gap: 15px;
-  }
 
-  .navbar nav {
-    width: 100%;
-    overflow-x: auto;
-    gap: 15px;
-    white-space: nowrap;
-  }
+    .navbar {
+        height: auto;
 
-  .search-box {
-    margin-left: auto;
-    width: 45px;
-  }
+        min-height: 70px;
 
-  .search-box.active {
-    width: 100%;
-  }
+        flex-wrap: wrap;
 
-  .search-box.active input {
-    padding: 0 50px 0 15px;
-  }
+        padding: 15px 5%;
 
-  .movie-card {
-    width: 140px;
-    height: 210px;
-    flex: 0 0 140px;
-  }
+        gap: 15px;
+    }
 
-  .hero h2 {
-    font-size: 32px;
-  }
+    .navbar nav {
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 18px;
+
+        white-space: nowrap;
+
+        padding-bottom: 3px;
+
+        scrollbar-width: none;
+    }
+
+    .navbar nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .search-box {
+        margin-left: auto;
+
+        width: 45px;
+    }
+
+    .search-box.active {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 70px 5% 60px;
+
+        background-position: center;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .catalog {
+        padding: 25px 5% 50px;
+    }
+
+    .catalog h2 {
+        font-size: 22px;
+    }
+
+    .movie-card {
+        width: 140px;
+        height: 210px;
+
+        min-width: 140px;
+
+        flex: 0 0 140px;
+    }
+
+    .movie-title {
+        font-size: 13px;
+    }
+}
+
+
+/* CELULARES MUITO PEQUENOS */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .buttons button {
+        width: auto;
+    }
 }
