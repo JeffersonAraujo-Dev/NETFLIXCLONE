@@ -170,4 +170,576 @@ document.addEventListener("DOMContentLoaded", () => {
             titulo: "O Exterminador do Futuro",
             tituloOriginal: "The Terminator",
             genero: "Ficção científica",
-           
+            categoria: "ficcao",
+            ano: 1984,
+            imagem:
+                "https://image.tmdb.org/t/p/w500/vvevzdYIrk2636maNW4qeWmlPFG.jpg",
+            descricao:
+                "Um soldado volta no tempo para proteger uma mulher que será fundamental para o futuro da humanidade."
+        },
+
+        {
+            id: 13,
+            titulo: "Guardiões da Galáxia",
+            tituloOriginal: "Guardians of the Galaxy",
+            genero: "Ficção científica",
+            categoria: "ficcao",
+            ano: 2014,
+            imagem:
+                "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+            descricao:
+                "Um grupo improvável de heróis precisa se unir para proteger a galáxia de uma ameaça poderosa."
+        },
+
+
+        // =====================
+        // SUSPENSE
+        // =====================
+
+        {
+            id: 14,
+            titulo: "Cisne Negro",
+            tituloOriginal: "Black Swan",
+            genero: "Suspense",
+            categoria: "suspense",
+            ano: 2010,
+            imagem:
+                "https://image.tmdb.org/t/p/w500/z68py0ZqPgeacGPG54AGVRbNBS7.jpg",
+            descricao:
+                "Uma bailarina mergulha em uma busca obsessiva pela perfeição e começa a perder a noção da realidade."
+        },
+
+        {
+            id: 15,
+            titulo: "Ilha do Medo",
+            tituloOriginal: "Shutter Island",
+            genero: "Suspense",
+            categoria: "suspense",
+            ano: 2010,
+            imagem:
+                "https://image.tmdb.org/t/p/w500/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg",
+            descricao:
+                "Um investigador chega a uma ilha isolada para investigar o desaparecimento de uma paciente."
+        },
+
+        {
+            id: 16,
+            titulo: "Seven: Os Sete Crimes Capitais",
+            tituloOriginal: "Se7en",
+            genero: "Suspense",
+            categoria: "suspense",
+            ano: 1995,
+            imagem:
+                "https://image.tmdb.org/t/p/w500/6yoghtyTpznpBik8EngEmJskVUO.jpg",
+            descricao:
+                "Dois investigadores seguem as pistas deixadas por um assassino que utiliza os sete pecados capitais."
+        }
+
+    ];
+
+
+    /* =========================
+       ELEMENTOS
+    ========================= */
+
+    const popularMovies =
+        document.getElementById("popular-movies");
+
+    const actionMovies =
+        document.getElementById("action-movies");
+
+    const fictionMovies =
+        document.getElementById("fiction-movies");
+
+    const thrillerMovies =
+        document.getElementById("thriller-movies");
+
+    const searchResults =
+        document.getElementById("search-results");
+
+    const searchResultsSection =
+        document.getElementById("search-results-section");
+
+    const searchInput =
+        document.getElementById("search-input");
+
+    const searchButton =
+        document.getElementById("search-button");
+
+    const searchBox =
+        document.getElementById("search-box");
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    const hero =
+        document.getElementById("hero");
+
+    const heroTitle =
+        document.getElementById("hero-title");
+
+    const heroCategory =
+        document.getElementById("hero-category");
+
+    const heroDescription =
+        document.getElementById("hero-description");
+
+
+    /* =========================
+       CRIAR CARD
+    ========================= */
+
+    function criarFilme(filme) {
+
+        const card =
+            document.createElement("article");
+
+        card.className = "movie-card";
+
+        card.dataset.id = filme.id;
+
+
+        const imgWrapper =
+            document.createElement("div");
+
+        imgWrapper.className =
+            "movie-image";
+
+
+        const img =
+            document.createElement("img");
+
+        img.src = filme.imagem;
+
+        img.alt = filme.titulo;
+
+        img.loading = "lazy";
+
+
+        /*
+         * Se alguma imagem falhar,
+         * não interfere na pesquisa
+         * nem no restante do catálogo.
+         */
+
+        img.onerror = () => {
+
+            console.warn(
+                "Imagem não carregada:",
+                filme.titulo
+            );
+
+            img.onerror = null;
+
+            img.src =
+                "https://placehold.co/300x450/222/fff?text=" +
+                encodeURIComponent(
+                    filme.titulo
+                );
+
+        };
+
+
+        const title =
+            document.createElement("div");
+
+        title.className =
+            "movie-title";
+
+        title.textContent =
+            filme.titulo;
+
+
+        imgWrapper.appendChild(img);
+
+        imgWrapper.appendChild(title);
+
+        card.appendChild(imgWrapper);
+
+
+        /* =====================
+           CLIQUE NO FILME
+        ===================== */
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                abrirHero(filme);
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        return card;
+    }
+
+
+    /* =========================
+       CARREGAR FILMES
+    ========================= */
+
+    function carregarFilmes(
+        container,
+        lista
+    ) {
+
+        if (!container) {
+
+            console.error(
+                "Container não encontrado."
+            );
+
+            return;
+        }
+
+
+        container.innerHTML = "";
+
+
+        lista.forEach(filme => {
+
+            const card =
+                criarFilme(filme);
+
+            container.appendChild(card);
+
+        });
+
+    }
+
+
+    /* =========================
+       CARREGAR CATEGORIAS
+    ========================= */
+
+    function carregarCatalogo() {
+
+        const populares =
+            filmes.filter(
+                filme =>
+                    filme.categoria === "popular"
+            );
+
+
+        const acao =
+            filmes.filter(
+                filme =>
+                    filme.categoria === "acao"
+            );
+
+
+        const ficcao =
+            filmes.filter(
+                filme =>
+                    filme.categoria === "ficcao"
+            );
+
+
+        const suspense =
+            filmes.filter(
+                filme =>
+                    filme.categoria === "suspense"
+            );
+
+
+        carregarFilmes(
+            popularMovies,
+            populares
+        );
+
+
+        carregarFilmes(
+            actionMovies,
+            acao
+        );
+
+
+        carregarFilmes(
+            fictionMovies,
+            ficcao
+        );
+
+
+        carregarFilmes(
+            thrillerMovies,
+            suspense
+        );
+
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    function abrirHero(filme) {
+
+        heroTitle.textContent =
+            filme.titulo;
+
+
+        heroCategory.textContent =
+            `FILME • ${filme.genero.toUpperCase()} • ${filme.ano}`;
+
+
+        heroDescription.textContent =
+            filme.descricao;
+
+
+        hero.style.backgroundImage =
+            `url("${filme.imagem}")`;
+
+    }
+
+
+    /* =========================
+       PESQUISA
+    ========================= */
+
+    function pesquisarFilmes() {
+
+        const termo =
+            searchInput.value
+                .toLowerCase()
+                .trim();
+
+
+        if (!termo) {
+
+            limparPesquisa();
+
+            return;
+        }
+
+
+        const resultados =
+            filmes.filter(filme => {
+
+                return (
+
+                    filme.titulo
+                        .toLowerCase()
+                        .includes(termo)
+
+                    ||
+
+                    filme.tituloOriginal
+                        .toLowerCase()
+                        .includes(termo)
+
+                    ||
+
+                    filme.genero
+                        .toLowerCase()
+                        .includes(termo)
+
+                    ||
+
+                    String(filme.ano)
+                        .includes(termo)
+
+                );
+
+            });
+
+
+        mostrarResultados(
+            resultados
+        );
+
+    }
+
+
+    /* =========================
+       MOSTRAR RESULTADOS
+    ========================= */
+
+    function mostrarResultados(
+        resultados
+    ) {
+
+        searchResults.innerHTML = "";
+
+        searchResultsSection.hidden =
+            false;
+
+
+        if (resultados.length === 0) {
+
+            const mensagem =
+                document.createElement(
+                    "div"
+                );
+
+
+            mensagem.className =
+                "no-results";
+
+
+            mensagem.textContent =
+                "Nenhum filme encontrado.";
+
+
+            searchResults.appendChild(
+                mensagem
+            );
+
+            return;
+        }
+
+
+        resultados.forEach(filme => {
+
+            searchResults.appendChild(
+                criarFilme(filme)
+            );
+
+        });
+
+    }
+
+
+    /* =========================
+       LIMPAR PESQUISA
+    ========================= */
+
+    function limparPesquisa() {
+
+        searchInput.value = "";
+
+        searchResults.innerHTML = "";
+
+        searchResultsSection.hidden =
+            true;
+
+    }
+
+
+    /* =========================
+       BOTÃO DE PESQUISA
+    ========================= */
+
+    searchButton.addEventListener(
+        "click",
+        event => {
+
+            event.stopPropagation();
+
+
+            if (
+                !searchBox.classList.contains(
+                    "active"
+                )
+            ) {
+
+                searchBox.classList.add(
+                    "active"
+                );
+
+                searchInput.focus();
+
+                return;
+            }
+
+
+            if (
+                searchInput.value.trim()
+            ) {
+
+                pesquisarFilmes();
+
+            } else {
+
+                searchBox.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       ENTER / ESC
+    ========================= */
+
+    searchInput.addEventListener(
+        "keyup",
+        event => {
+
+            if (event.key === "Enter") {
+
+                pesquisarFilmes();
+
+            }
+
+
+            if (event.key === "Escape") {
+
+                searchBox.classList.remove(
+                    "active"
+                );
+
+                limparPesquisa();
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       CLIQUE FORA
+    ========================= */
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            if (
+                !searchBox.contains(
+                    event.target
+                )
+            ) {
+
+                if (
+                    searchBox.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    searchBox.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       INICIALIZAÇÃO
+    ========================= */
+
+    carregarCatalogo();
+
+    abrirHero(filmes[0]);
+
+
+    console.log(
+        `${filmes.length} filmes carregados.`
+    );
+
+});
