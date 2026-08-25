@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+
+  document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Netflix Clone: JavaScript carregado!");
 
@@ -8,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const filmes = [
 
-        // =====================
-        // POPULARES
-        // =====================
+        /* =====================
+           POPULARES
+        ===================== */
 
         {
             id: 1,
@@ -19,8 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ficção científica",
             categoria: "popular",
             ano: 2014,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
             descricao:
                 "Uma equipe de exploradores viaja através de um buraco de minhoca em busca de um novo lar para a humanidade."
         },
@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ficção científica",
             categoria: "popular",
             ano: 2010,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
             descricao:
                 "Um especialista em invadir sonhos recebe uma missão aparentemente impossível: implantar uma ideia na mente de alguém."
         },
@@ -45,8 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ação",
             categoria: "popular",
             ano: 2008,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
             descricao:
                 "Batman enfrenta uma ameaça que mergulha Gotham em uma onda de caos e coloca seus limites à prova."
         },
@@ -58,8 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ação",
             categoria: "popular",
             ano: 2019,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
             descricao:
                 "Os Vingadores restantes precisam encontrar uma maneira de reverter os acontecimentos que mudaram o universo."
         },
@@ -71,8 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ficção científica",
             categoria: "popular",
             ano: 2009,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg",
             descricao:
                 "Um ex-fuzileiro entra em contato com o povo de Pandora e começa a questionar sua própria missão."
         },
@@ -84,16 +80,39 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Suspense",
             categoria: "popular",
             ano: 2023,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
             descricao:
                 "A trajetória do cientista responsável pelo desenvolvimento da primeira bomba atômica."
         },
 
+        {
+            id: 17,
+            titulo: "Gladiador",
+            tituloOriginal: "Gladiator",
+            genero: "Ação",
+            categoria: "popular",
+            ano: 2000,
+            imagem: "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+            descricao:
+                "Um general romano é traído e transformado em escravo, iniciando uma jornada de vingança."
+        },
 
-        // =====================
-        // AÇÃO
-        // =====================
+        {
+            id: 18,
+            titulo: "Titanic",
+            tituloOriginal: "Titanic",
+            genero: "Drama",
+            categoria: "popular",
+            ano: 1997,
+            imagem: "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+            descricao:
+                "Uma história de amor entre duas pessoas de classes sociais diferentes durante a viagem do Titanic."
+        },
+
+
+        /* =====================
+           AÇÃO
+        ===================== */
 
         {
             id: 7,
@@ -102,8 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ação",
             categoria: "acao",
             ano: 2014,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg",
             descricao:
                 "Um lendário assassino retorna à ação depois que acontecimentos pessoais o obrigam a enfrentar seu passado."
         },
@@ -115,8 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ação",
             categoria: "acao",
             ano: 2023,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
             descricao:
                 "John Wick descobre um caminho para derrotar a organização que controla o submundo dos assassinos."
         },
@@ -128,8 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ação",
             categoria: "acao",
             ano: 1999,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
             descricao:
                 "Um hacker descobre que a realidade em que vive pode ser uma gigantesca simulação controlada por máquinas."
         },
@@ -141,16 +157,39 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ação",
             categoria: "acao",
             ano: 2023,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
             descricao:
                 "Os Guardiões precisam se unir novamente para proteger um de seus integrantes e enfrentar uma nova ameaça."
         },
 
+        {
+            id: 19,
+            titulo: "Vingadores: Guerra Infinita",
+            tituloOriginal: "Avengers: Infinity War",
+            genero: "Ação",
+            categoria: "acao",
+            ano: 2018,
+            imagem: "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDhiRDpZFHSPWJJA.jpg",
+            descricao:
+                "Os Vingadores e seus aliados enfrentam Thanos em uma batalha pelo destino do universo."
+        },
 
-        // =====================
-        // FICÇÃO CIENTÍFICA
-        // =====================
+        {
+            id: 20,
+            titulo: "Homem-Aranha: Sem Volta para Casa",
+            tituloOriginal: "Spider-Man: No Way Home",
+            genero: "Ação",
+            categoria: "acao",
+            ano: 2021,
+            imagem: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+            descricao:
+                "Peter Parker precisa lidar com as consequências de ter sua identidade revelada ao mundo."
+        },
+
+
+        /* =====================
+           FICÇÃO CIENTÍFICA
+        ===================== */
 
         {
             id: 11,
@@ -159,8 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ficção científica",
             categoria: "ficcao",
             ano: 2024,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
             descricao:
                 "Paul Atreides se une aos Fremen enquanto busca vingança contra aqueles que destruíram sua família."
         },
@@ -172,8 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ficção científica",
             categoria: "ficcao",
             ano: 1984,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/vvevzdYIrk2636maNW4qeWmlPFG.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/vvevzdYIrk2636maNW4qeWmlPFG.jpg",
             descricao:
                 "Um soldado volta no tempo para proteger uma mulher que será fundamental para o futuro da humanidade."
         },
@@ -185,16 +222,39 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Ficção científica",
             categoria: "ficcao",
             ano: 2014,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
             descricao:
                 "Um grupo improvável de heróis precisa se unir para proteger a galáxia de uma ameaça poderosa."
         },
 
+        {
+            id: 21,
+            titulo: "Blade Runner 2049",
+            tituloOriginal: "Blade Runner 2049",
+            genero: "Ficção científica",
+            categoria: "ficcao",
+            ano: 2017,
+            imagem: "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+            descricao:
+                "Um jovem blade runner descobre um segredo que pode levar à destruição da sociedade."
+        },
 
-        // =====================
-        // SUSPENSE
-        // =====================
+        {
+            id: 22,
+            titulo: "De Volta para o Futuro",
+            tituloOriginal: "Back to the Future",
+            genero: "Ficção científica",
+            categoria: "ficcao",
+            ano: 1985,
+            imagem: "https://image.tmdb.org/t/p/w500/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg",
+            descricao:
+                "Um adolescente viaja acidentalmente ao passado e precisa garantir que seus pais se apaixonem."
+        },
+
+
+        /* =====================
+           SUSPENSE
+        ===================== */
 
         {
             id: 14,
@@ -203,8 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Suspense",
             categoria: "suspense",
             ano: 2010,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/z68py0ZqPgeacGPG54AGVRbNBS7.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/rH19vkjL2H9jJ8H2Y1V6nV0dR5.jpg",
             descricao:
                 "Uma bailarina mergulha em uma busca obsessiva pela perfeição e começa a perder a noção da realidade."
         },
@@ -216,8 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Suspense",
             categoria: "suspense",
             ano: 2010,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/nT97ifVT2J1yMQmeq20Qblg61T.jpg",
             descricao:
                 "Um investigador chega a uma ilha isolada para investigar o desaparecimento de uma paciente."
         },
@@ -229,10 +287,33 @@ document.addEventListener("DOMContentLoaded", () => {
             genero: "Suspense",
             categoria: "suspense",
             ano: 1995,
-            imagem:
-                "https://image.tmdb.org/t/p/w500/6yoghtyTpznpBik8EngEmJskVUO.jpg",
+            imagem: "https://image.tmdb.org/t/p/w500/g66CLfP5NYKYgOO8H28AnWWfrvU.jpg",
             descricao:
                 "Dois investigadores seguem as pistas deixadas por um assassino que utiliza os sete pecados capitais."
+        },
+
+        {
+            id: 23,
+            titulo: "Clube da Luta",
+            tituloOriginal: "Fight Club",
+            genero: "Suspense",
+            categoria: "suspense",
+            ano: 1999,
+            imagem: "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+            descricao:
+                "Um homem insatisfeito com sua vida conhece um estranho que muda completamente sua maneira de enxergar o mundo."
+        },
+
+        {
+            id: 24,
+            titulo: "O Silêncio dos Inocentes",
+            tituloOriginal: "The Silence of the Lambs",
+            genero: "Suspense",
+            categoria: "suspense",
+            ano: 1991,
+            imagem: "https://image.tmdb.org/t/p/w500/uS9m8OBk1A8eM7Hby5wTQY9xQ.jpg",
+            descricao:
+                "Uma jovem agente do FBI procura a ajuda de um perigoso criminoso para capturar outro assassino."
         }
 
     ];
@@ -288,6 +369,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
+       IMAGEM FALLBACK
+    ========================= */
+
+    function imagemFallback(titulo) {
+
+        const svg = `
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="300"
+                 height="450"
+                 viewBox="0 0 300 450">
+
+                <rect width="300"
+                      height="450"
+                      fill="#222"/>
+
+                <text x="150"
+                      y="210"
+                      text-anchor="middle"
+                      fill="#fff"
+                      font-size="22"
+                      font-family="Arial">
+                    ${titulo}
+                </text>
+
+                <text x="150"
+                      y="250"
+                      text-anchor="middle"
+                      fill="#aaa"
+                      font-size="16"
+                      font-family="Arial">
+                    Sem imagem
+                </text>
+
+            </svg>
+        `;
+
+        return "data:image/svg+xml;charset=UTF-8," +
+            encodeURIComponent(svg);
+    }
+
+
+    /* =========================
        CRIAR CARD
     ========================= */
 
@@ -317,29 +440,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
         img.loading = "lazy";
 
+        img.decoding = "async";
 
-        /*
-         * Se alguma imagem falhar,
-         * não interfere na pesquisa
-         * nem no restante do catálogo.
-         */
 
-        img.onerror = () => {
+        /* =====================
+           ERRO DA IMAGEM
+        ===================== */
 
-            console.warn(
-                "Imagem não carregada:",
-                filme.titulo
-            );
+        img.addEventListener(
+            "error",
+            () => {
 
-            img.onerror = null;
-
-            img.src =
-                "https://placehold.co/300x450/222/fff?text=" +
-                encodeURIComponent(
-                    filme.titulo
+                console.warn(
+                    "Imagem não carregada:",
+                    filme.titulo,
+                    filme.imagem
                 );
 
-        };
+                img.src =
+                    imagemFallback(
+                        filme.titulo
+                    );
+
+            },
+            {
+                once: true
+            }
+        );
 
 
         const title =
@@ -404,14 +531,18 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML = "";
 
 
-        lista.forEach(filme => {
+        lista.forEach(
+            filme => {
 
-            const card =
-                criarFilme(filme);
+                const card =
+                    criarFilme(filme);
 
-            container.appendChild(card);
+                container.appendChild(
+                    card
+                );
 
-        });
+            }
+        );
 
     }
 
@@ -425,28 +556,32 @@ document.addEventListener("DOMContentLoaded", () => {
         const populares =
             filmes.filter(
                 filme =>
-                    filme.categoria === "popular"
+                    filme.categoria ===
+                    "popular"
             );
 
 
         const acao =
             filmes.filter(
                 filme =>
-                    filme.categoria === "acao"
+                    filme.categoria ===
+                    "acao"
             );
 
 
         const ficcao =
             filmes.filter(
                 filme =>
-                    filme.categoria === "ficcao"
+                    filme.categoria ===
+                    "ficcao"
             );
 
 
         const suspense =
             filmes.filter(
                 filme =>
-                    filme.categoria === "suspense"
+                    filme.categoria ===
+                    "suspense"
             );
 
 
@@ -482,20 +617,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function abrirHero(filme) {
 
-        heroTitle.textContent =
-            filme.titulo;
+        if (!hero) return;
 
 
-        heroCategory.textContent =
-            `FILME • ${filme.genero.toUpperCase()} • ${filme.ano}`;
+        if (heroTitle) {
+
+            heroTitle.textContent =
+                filme.titulo;
+
+        }
 
 
-        heroDescription.textContent =
-            filme.descricao;
+        if (heroCategory) {
+
+            heroCategory.textContent =
+                `FILME • ${filme.genero.toUpperCase()} • ${filme.ano}`;
+
+        }
+
+
+        if (heroDescription) {
+
+            heroDescription.textContent =
+                filme.descricao;
+
+        }
 
 
         hero.style.backgroundImage =
-            `url("${filme.imagem}")`;
+            `linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.15),
+                rgba(0,0,0,0.92)
+            ),
+            url("${filme.imagem}")`;
 
     }
 
@@ -505,6 +660,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     function pesquisarFilmes() {
+
+        if (!searchInput) return;
+
 
         const termo =
             searchInput.value
@@ -517,38 +675,41 @@ document.addEventListener("DOMContentLoaded", () => {
             limparPesquisa();
 
             return;
+
         }
 
 
         const resultados =
-            filmes.filter(filme => {
+            filmes.filter(
+                filme => {
 
-                return (
+                    return (
 
-                    filme.titulo
-                        .toLowerCase()
-                        .includes(termo)
+                        filme.titulo
+                            .toLowerCase()
+                            .includes(termo)
 
-                    ||
+                        ||
 
-                    filme.tituloOriginal
-                        .toLowerCase()
-                        .includes(termo)
+                        filme.tituloOriginal
+                            .toLowerCase()
+                            .includes(termo)
 
-                    ||
+                        ||
 
-                    filme.genero
-                        .toLowerCase()
-                        .includes(termo)
+                        filme.genero
+                            .toLowerCase()
+                            .includes(termo)
 
-                    ||
+                        ||
 
-                    String(filme.ano)
-                        .includes(termo)
+                        String(filme.ano)
+                            .includes(termo)
 
-                );
+                    );
 
-            });
+                }
+            );
 
 
         mostrarResultados(
@@ -559,20 +720,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
-       MOSTRAR RESULTADOS
+       RESULTADOS
     ========================= */
 
     function mostrarResultados(
         resultados
     ) {
 
-        searchResults.innerHTML = "";
+        if (!searchResults ||
+            !searchResultsSection) {
+
+            return;
+
+        }
+
+
+        searchResults.innerHTML =
+            "";
+
 
         searchResultsSection.hidden =
             false;
 
 
-        if (resultados.length === 0) {
+        if (
+            resultados.length ===
+            0
+        ) {
 
             const mensagem =
                 document.createElement(
@@ -592,17 +766,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 mensagem
             );
 
+
             return;
+
         }
 
 
-        resultados.forEach(filme => {
+        resultados.forEach(
+            filme => {
 
-            searchResults.appendChild(
-                criarFilme(filme)
-            );
+                searchResults.appendChild(
+                    criarFilme(filme)
+                );
 
-        });
+            }
+        );
 
     }
 
@@ -613,88 +791,139 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function limparPesquisa() {
 
-        searchInput.value = "";
+        if (searchInput) {
 
-        searchResults.innerHTML = "";
+            searchInput.value = "";
 
-        searchResultsSection.hidden =
-            true;
+        }
+
+
+        if (searchResults) {
+
+            searchResults.innerHTML =
+                "";
+
+        }
+
+
+        if (searchResultsSection) {
+
+            searchResultsSection.hidden =
+                true;
+
+        }
 
     }
 
 
     /* =========================
-       BOTÃO DE PESQUISA
+       BOTÃO PESQUISA
     ========================= */
 
-    searchButton.addEventListener(
-        "click",
-        event => {
+    if (searchButton) {
 
-            event.stopPropagation();
+        searchButton.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
 
 
-            if (
-                !searchBox.classList.contains(
-                    "active"
-                )
-            ) {
+                if (
+                    !searchBox
+                ) {
 
-                searchBox.classList.add(
-                    "active"
-                );
+                    return;
 
-                searchInput.focus();
+                }
 
-                return;
+
+                if (
+                    !searchBox.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    searchBox.classList.add(
+                        "active"
+                    );
+
+
+                    if (searchInput) {
+
+                        searchInput.focus();
+
+                    }
+
+
+                    return;
+
+                }
+
+
+                if (
+                    searchInput &&
+                    searchInput.value.trim()
+                ) {
+
+                    pesquisarFilmes();
+
+                } else {
+
+                    searchBox.classList.remove(
+                        "active"
+                    );
+
+                }
+
             }
+        );
 
-
-            if (
-                searchInput.value.trim()
-            ) {
-
-                pesquisarFilmes();
-
-            } else {
-
-                searchBox.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
-    );
+    }
 
 
     /* =========================
        ENTER / ESC
     ========================= */
 
-    searchInput.addEventListener(
-        "keyup",
-        event => {
+    if (searchInput) {
 
-            if (event.key === "Enter") {
+        searchInput.addEventListener(
+            "keyup",
+            event => {
 
-                pesquisarFilmes();
+                if (
+                    event.key ===
+                    "Enter"
+                ) {
+
+                    pesquisarFilmes();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    if (searchBox) {
+
+                        searchBox.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+
+                    limparPesquisa();
+
+                }
 
             }
+        );
 
-
-            if (event.key === "Escape") {
-
-                searchBox.classList.remove(
-                    "active"
-                );
-
-                limparPesquisa();
-
-            }
-
-        }
-    );
+    }
 
 
     /* =========================
@@ -704,6 +933,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener(
         "click",
         event => {
+
+            if (
+                !searchBox
+            ) {
+
+                return;
+
+            }
+
 
             if (
                 !searchBox.contains(
@@ -735,12 +973,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carregarCatalogo();
 
-    abrirHero(filmes[0]);
+    abrirHero(
+        filmes[0]
+    );
 
 
     console.log(
         `${filmes.length} filmes carregados.`
     );
 
-});
-           
+});         
