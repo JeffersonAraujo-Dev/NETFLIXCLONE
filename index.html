@@ -19,60 +19,82 @@
 
 <body>
 
+    <!-- NAVBAR -->
     <header class="navbar">
 
         <h1 class="logo">NETFLIX</h1>
 
         <nav>
             <a href="#">Início</a>
-            <a href="#">Filmes</a>
-            <a href="#">Séries</a>
-            <a href="#">Minha lista</a>
+            <a href="#filmes">Filmes</a>
+            <a href="#acao">Ação</a>
+            <a href="#ficcao">Ficção científica</a>
         </nav>
 
-      <div class="search-box" id="search-box">
+        <div class="search-box" id="search-box">
 
-    <input
-        type="text"
-        id="search-input"
-        placeholder="Buscar filmes..."
-    >
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Buscar filmes..."
+                autocomplete="off"
+            >
 
-    <button
-        id="search-button"
-        aria-label="Abrir pesquisa"
-    ></button>
+            <button
+                id="search-button"
+                aria-label="Pesquisar"
+            ></button>
 
-</div>
-      
+        </div>
+
     </header>
 
 
+    <!-- CONTEÚDO -->
     <main>
 
-        <section class="hero">
+        <!-- HERO -->
+        <section
+            class="hero"
+            id="hero"
+        >
+
+            <div class="hero-overlay"></div>
 
             <div class="hero-content">
 
-                <p class="category">
-                    FILME • AÇÃO
+                <p
+                    class="category"
+                    id="hero-category"
+                >
+                    FILME • FICÇÃO CIENTÍFICA
                 </p>
 
-                <h2>Seu filme em destaque</h2>
+                <h2 id="hero-title">
+                    Interestelar
+                </h2>
 
-                <p class="description">
-                    Uma descrição do filme aparecerá aqui.
-                    Depois vamos buscar essas informações
-                    através da nossa API.
+                <p
+                    class="description"
+                    id="hero-description"
+                >
+                    Uma equipe de exploradores viaja através de um
+                    buraco de minhoca em busca de um novo lar para a humanidade.
                 </p>
 
                 <div class="buttons">
 
-                    <button class="btn-play">
+                    <button
+                        class="btn-play"
+                        id="hero-play"
+                    >
                         ▶ Assistir
                     </button>
 
-                    <button class="btn-info">
+                    <button
+                        class="btn-info"
+                        id="hero-info"
+                    >
                         ⓘ Mais informações
                     </button>
 
@@ -83,25 +105,92 @@
         </section>
 
 
-        <section class="catalog">
+        <!-- CATÁLOGO -->
+        <main
+            class="catalog"
+            id="filmes"
+        >
 
-    <h2>Filmes populares</h2>
+            <!-- RESULTADOS DA PESQUISA -->
+            <section
+                class="search-results-section"
+                id="search-results-section"
+                hidden
+            >
 
-    <div class="movie-list" id="popular-movies"></div>
+                <h2>Resultados da pesquisa</h2>
 
-    <h2>Ação</h2>
+                <div
+                    class="movie-list"
+                    id="search-results"
+                ></div>
 
-    <div class="movie-list" id="action-movies"></div>
+            </section>
 
-    <h2>Ficção científica</h2>
 
-    <div class="movie-list" id="fiction-movies"></div>
+            <!-- POPULARES -->
+            <section class="movie-section">
 
-        </section>
+                <h2>Filmes populares</h2>
+
+                <div
+                    class="movie-list"
+                    id="popular-movies"
+                ></div>
+
+            </section>
+
+
+            <!-- AÇÃO -->
+            <section
+                class="movie-section"
+                id="acao"
+            >
+
+                <h2>Ação</h2>
+
+                <div
+                    class="movie-list"
+                    id="action-movies"
+                ></div>
+
+            </section>
+
+
+            <!-- FICÇÃO -->
+            <section
+                class="movie-section"
+                id="ficcao"
+            >
+
+                <h2>Ficção científica</h2>
+
+                <div
+                    class="movie-list"
+                    id="fiction-movies"
+                ></div>
+
+            </section>
+
+
+            <!-- SUSPENSE -->
+            <section class="movie-section">
+
+                <h2>Suspense</h2>
+
+                <div
+                    class="movie-list"
+                    id="thriller-movies"
+                ></div>
+
+            </section>
+
+        </main>
 
     </main>
 
 
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
 
 </body>
