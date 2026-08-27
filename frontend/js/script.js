@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
        CONFIGURAÇÃO
     ===================================================== */
 
-    const API_URL = "http://localhost:8080/api/filmes";
+    const API_URL = "https://netflixclone-3pva.onrender.com/api/filmes";
 
     let filmes = [];
 
