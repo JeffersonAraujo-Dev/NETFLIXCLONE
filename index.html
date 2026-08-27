@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix Clone</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA DE PERFIS
+    ========================== -->
+
+    <section id="profile-screen" class="profile-screen">
+
+        <div class="profile-container">
+
+            <div class="netflix-logo">NETFLIX</div>
+
+            <h1>Quem está assistindo?</h1>
+
+            <div class="profiles">
+
+                <button class="profile" data-profile="Jefferson Araújo-Dev">
+                    <div class="profile-avatar avatar-jefferson">
+                        <span>J</span>
+                    </div>
+                    <span>Jefferson Araújo-Dev</span>
+                </button>
+
+                <button class="profile" data-profile="Dev">
+                    <div class="profile-avatar avatar-dev">
+                        <span>DEV</span>
+                    </div>
+                    <span>Dev</span>
+                </button>
+
+                <button class="profile" data-profile="Visitante">
+                    <div class="profile-avatar avatar-visitante">
+                        <span>▶</span>
+                    </div>
+                    <span>Visitante</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATÁLOGO
+    ========================== -->
+
+    <section id="catalog-screen" class="catalog-screen">
+
+        <!-- NAVBAR -->
+
+        <header class="navbar">
+
+            <div class="nav-left">
+
+                <div class="netflix-logo navbar-logo">
+                    NETFLIX
+                </div>
+
+                <nav>
+                    <a href="#inicio">Início</a>
+                    <a href="#filmes">Filmes</a>
+                    <a href="#acao">Ação</a>
+                    <a href="#ficcao">Ficção científica</a>
+                </nav>
+
+            </div>
+
+
+            <div class="nav-right">
+
+                <!-- PESQUISA -->
+
+                <div class="search-wrapper" id="search-wrapper">
+
+                    <button
+                        id="search-button"
+                        class="search-button"
+                        type="button"
+                        aria-label="Pesquisar">
+
+                        <span class="search-icon"></span>
+
+                    </button>
+
+                    <input
+                        id="search-input"
+                        type="text"
+                        placeholder="Títulos, pessoas, gêneros..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <!-- PERFIL -->
+
+                <button
+                    class="profile-menu"
+                    id="profile-menu"
+                    type="button"
+                    aria-label="Perfil">
+
+                    <span class="mini-avatar">J</span>
+
+                    <span class="profile-arrow">⌄</span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             CONTEÚDO
+        ========================== -->
+
+        <main id="inicio">
+
+            <!-- HERO -->
+
+            <section id="hero" class="hero">
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-content">
+
+                    <div class="hero-brand">
+                        NETFLIX CLONE
+                    </div>
+
+                    <h1 id="hero-title">
+                        Carregando...
+                    </h1>
+
+                    <div id="hero-category" class="hero-info"></div>
+
+                    <p id="hero-description">
+                        Carregando filmes...
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            id="play-button"
+                            class="hero-button play-button"
+                            type="button">
+
+                            <span>▶</span>
+                            Assistir
+
+                        </button>
+
+                        <button
+                            id="info-button"
+                            class="hero-button info-button"
+                            type="button">
+
+                            <span>ⓘ</span>
+                            Mais informações
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 RESULTADOS DA PESQUISA
+            ========================== -->
+
+            <section
+                id="search-results-section"
+                class="movie-section search-section">
+
+                <h2>Resultados da pesquisa</h2>
+
+                <div
+                    id="search-results"
+                    class="movie-row">
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 POPULARES
+            ========================== -->
+
+            <section
+                id="filmes"
+                class="movie-section">
+
+                <h2>Populares</h2>
+
+                <div
+                    id="popular-movies"
+                    class="movie-row">
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 AÇÃO
+            ========================== -->
+
+            <section
+                id="acao"
+                class="movie-section">
+
+                <h2>Filmes de ação</h2>
+
+                <div
+                    id="action-movies"
+                    class="movie-row">
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FICÇÃO
+            ========================== -->
+
+            <section
+                id="ficcao"
+                class="movie-section">
+
+                <h2>Ficção científica</h2>
+
+                <div
+                    id="fiction-movies"
+                    class="movie-row">
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 DRAMA
+            ========================== -->
+
+            <section
+                id="drama"
+                class="movie-section">
+
+                <h2>Drama</h2>
+
+                <div
+                    id="drama-movies"
+                    class="movie-row">
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             RODAPÉ
+        ========================== -->
+
+        <footer>
+
+            <p>
+                Netflix Clone — Projeto desenvolvido por
+                Jefferson Araújo-Dev
+            </p>
+
+            <p>
+                Projeto educacional para estudos de
+                HTML, CSS, JavaScript, Java e Spring Boot.
+            </p>
+
+        </footer>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

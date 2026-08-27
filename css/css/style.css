@@ -1,0 +1,1031 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #141414;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   TELA DE PERFIS
+===================================================== */
+
+.profile-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #242424 0%,
+            #181818 45%,
+            #080808 100%
+        );
+
+    transition:
+        opacity .45s ease,
+        visibility .45s ease;
+}
+
+.profile-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.profile-container h1 {
+    margin-bottom: 38px;
+
+    font-size: 32px;
+    font-weight: 400;
+
+    color: #fff;
+}
+
+.netflix-logo {
+    color: #e50914;
+
+    font-size: 38px;
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.4);
+}
+
+.profile-container > .netflix-logo {
+    margin-bottom: 48px;
+}
+
+.profiles {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 42px;
+
+    flex-wrap: wrap;
+}
+
+.profile {
+    width: 150px;
+
+    border: 0;
+    outline: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    color: #808080;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.profile:hover {
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+
+    margin-bottom: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    color: #fff;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.45);
+
+    border: 3px solid transparent;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.profile:hover .profile-avatar {
+    border-color: #fff;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.65);
+}
+
+.avatar-jefferson {
+    background:
+        linear-gradient(
+            135deg,
+            #172554,
+            #2563eb,
+            #111827
+        );
+
+    font-size: 72px;
+    font-weight: 700;
+}
+
+.avatar-dev {
+    background:
+        linear-gradient(
+            135deg,
+            #3f0d12,
+            #e50914,
+            #720d13
+        );
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.avatar-visitante {
+    background:
+        linear-gradient(
+            135deg,
+            #292929,
+            #666,
+            #171717
+        );
+
+    font-size: 55px;
+}
+
+
+/* =====================================================
+   CATÁLOGO
+===================================================== */
+
+.catalog-screen {
+    display: none;
+
+    min-height: 100vh;
+
+    background: #141414;
+}
+
+.catalog-screen.active {
+    display: block;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 68px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.7),
+            transparent
+        );
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    min-width: 0;
+}
+
+.navbar-logo {
+    flex-shrink: 0;
+
+    font-size: 27px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: #e5e5e5;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color .2s ease;
+}
+
+.navbar nav a:hover {
+    color: #b3b3b3;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   PESQUISA
+===================================================== */
+
+.search-wrapper {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    border: 1px solid transparent;
+
+    transition:
+        width .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+}
+
+.search-wrapper.open {
+    width: 270px;
+
+    background: #000;
+
+    border-color: #fff;
+}
+
+.search-button {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.search-icon {
+    position: relative;
+
+    width: 17px;
+    height: 17px;
+
+    display: block;
+
+    border: 2px solid #fff;
+
+    border-radius: 50%;
+}
+
+.search-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 2px;
+
+    right: -6px;
+    bottom: -3px;
+
+    background: #fff;
+
+    border-radius: 2px;
+
+    transform: rotate(45deg);
+}
+
+#search-input {
+    width: 0;
+
+    opacity: 0;
+
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    transition:
+        width .3s ease,
+        opacity .2s ease,
+        padding .3s ease;
+}
+
+.search-wrapper.open #search-input {
+    width: 220px;
+
+    opacity: 1;
+
+    padding: 0 10px;
+}
+
+#search-input::placeholder {
+    color: #aaa;
+}
+
+
+/* =====================================================
+   PERFIL MINI
+===================================================== */
+
+.profile-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    cursor: pointer;
+}
+
+.mini-avatar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #111827
+        );
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.profile-arrow {
+    color: #ddd;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    background-color: #141414;
+
+    background-size: cover;
+    background-position: center;
+
+    transition:
+        background-image .4s ease;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to right,
+            #141414 0%,
+            rgba(20,20,20,.8) 25%,
+            rgba(20,20,20,.25) 65%,
+            rgba(20,20,20,.05) 100%
+        ),
+        linear-gradient(
+            to top,
+            #141414 0%,
+            transparent 35%
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 570px;
+
+    padding-top: 80px;
+}
+
+.hero-brand {
+    margin-bottom: 15px;
+
+    color: #d7d7d7;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+#hero-title {
+    margin-bottom: 18px;
+
+    color: #fff;
+
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: .98;
+
+    font-weight: 800;
+
+    text-shadow:
+        2px 3px 12px #000;
+}
+
+.hero-info {
+    margin-bottom: 18px;
+
+    color: #ddd;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#hero-description {
+    margin-bottom: 26px;
+
+    color: #eee;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    text-shadow:
+        1px 2px 6px #000;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.hero-button {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 23px;
+
+    border: 0;
+    border-radius: 4px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.hero-button:hover {
+    transform: scale(1.03);
+}
+
+.play-button {
+    background: #fff;
+
+    color: #000;
+}
+
+.play-button:hover {
+    background: #ddd;
+}
+
+.info-button {
+    background: rgba(109,109,110,.75);
+
+    color: #fff;
+}
+
+.info-button:hover {
+    background: rgba(109,109,110,.55);
+}
+
+
+/* =====================================================
+   FILMES
+===================================================== */
+
+.movie-section {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: -50px;
+
+    padding:
+        0 4%
+        45px;
+}
+
+.movie-section h2 {
+    margin-bottom: 14px;
+
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.movie-row {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding:
+        5px 0
+        20px;
+
+    scrollbar-width: none;
+}
+
+.movie-row::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.movie-card {
+    position: relative;
+
+    flex: 0 0 190px;
+
+    height: 285px;
+
+    overflow: hidden;
+
+    background: #222;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.movie-card:hover {
+    z-index: 50;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.6);
+}
+
+.movie-image {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.movie-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #222;
+}
+
+.movie-title {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding:
+        40px 10px
+        10px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.95)
+        );
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    opacity: 0;
+
+    transition: opacity .2s ease;
+}
+
+.movie-card:hover .movie-title {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   PESQUISA
+===================================================== */
+
+.search-section {
+    display: none;
+
+    margin-top: 0;
+}
+
+.search-section.visible {
+    display: block;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 45px 4% 60px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    border-top: 1px solid #222;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .profile-container {
+        padding: 25px 15px;
+    }
+
+    .profile-container > .netflix-logo {
+        margin-bottom: 32px;
+    }
+
+    .profile-container h1 {
+        margin-bottom: 30px;
+
+        font-size: 25px;
+    }
+
+    .profiles {
+        gap: 18px;
+    }
+
+    .profile {
+        width: 105px;
+
+        font-size: 12px;
+    }
+
+    .profile-avatar {
+        width: 105px;
+        height: 105px;
+
+        margin-bottom: 10px;
+    }
+
+    .avatar-jefferson {
+        font-size: 55px;
+    }
+
+    .avatar-dev {
+        font-size: 19px;
+    }
+
+    .avatar-visitante {
+        font-size: 40px;
+    }
+
+
+    .navbar {
+        height: 62px;
+
+        padding: 0 18px;
+    }
+
+    .navbar-logo {
+        font-size: 23px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .nav-left {
+        gap: 0;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+
+    .search-wrapper.open {
+        width: 205px;
+    }
+
+    .search-wrapper.open #search-input {
+        width: 165px;
+    }
+
+
+    .hero {
+        min-height: 610px;
+
+        padding:
+            0 20px;
+
+        background-position: center;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    #hero-title {
+        font-size: 43px;
+    }
+
+    #hero-description {
+        max-width: 420px;
+
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .hero-button {
+        padding: 11px 17px;
+
+        font-size: 14px;
+    }
+
+
+    .movie-section {
+        padding:
+            0 20px
+            38px;
+    }
+
+    .movie-section h2 {
+        font-size: 18px;
+    }
+
+    .movie-card {
+        flex-basis: 140px;
+
+        height: 210px;
+    }
+
+    .movie-title {
+        padding:
+            30px 8px
+            8px;
+
+        font-size: 12px;
+    }
+
+
+    footer {
+        padding:
+            35px 20px
+            50px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .profile {
+        width: 90px;
+    }
+
+    .profile-avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .search-wrapper.open {
+        width: 180px;
+    }
+
+    .search-wrapper.open #search-input {
+        width: 140px;
+    }
+}
+
+
+/* ===== CORREÇÃO FINAL DA PESQUISA ===== */
+
+.search-wrapper {
+    width: 42px !important;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: width .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.search-wrapper.open {
+    width: 280px !important;
+    background: #000;
+    border-color: #fff;
+}
+
+.search-button {
+    width: 42px !important;
+    height: 40px;
+    min-width: 42px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: #fff;
+    right: -6px;
+    bottom: -3px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+#search-input {
+    width: 0 !important;
+    min-width: 0;
+    opacity: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    padding: 0;
+    font-size: 14px;
+    transition: width .25s ease, opacity .2s ease, padding .25s ease;
+}
+
+.search-wrapper.open #search-input {
+    width: 225px !important;
+    opacity: 1;
+    padding: 0 10px;
+}
+
+#search-input::placeholder {
+    color: #aaa;
+}
+
+.search-section {
+    display: none;
+}
+
+.search-section.visible {
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .search-wrapper.open {
+        width: 220px !important;
+    }
+
+    .search-wrapper.open #search-input {
+        width: 165px !important;
+    }
+}
