@@ -93,3 +93,4 @@ GitHub: https://github.com/JeffersonAraujo-Dev⁠�
 #Observação
 Projeto desenvolvido para fins educacionais e de portfólio. Não possui qualquer vínculo oficial com a Netflix.
 
+Ps: todo feito pelo celular 
